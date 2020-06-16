@@ -106,15 +106,24 @@ function treeHeight(tree){
 
 function isItBst(tree){
   if (!tree) return false;
-  if (!tree.left && !tree.right) return true;
-  else {
-    if (tree.left && tree.left.key > tree.key) return false;
-    if (tree.right && tree.right.key < tree.key) return false;
-    return isItBst(tree.left) || isItBst(tree.right);
+
+  if(tree.right && tree.left){
+    if (tree.left.key > tree.right.key) return false;
   }
+  
+  if(tree.left && tree.key > tree.left.key){
+    isItBst(tree.left); 
+  }
+  else if(tree.left && tree.key < tree.left.key)return false;
+  
+  if(tree.right && tree.key < tree.right.key){
+    isItBst(tree.right); 
+  }
+  else if(tree.right &&tree.key > tree.right.key)return false;
+  return true;
 }
 
 function balancedBst(tree){
   if(!tree) return false;
-  let halfBstLength = tree
+  let halfBstLength = tree;
 }
