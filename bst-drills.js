@@ -77,9 +77,20 @@ function main() {
   BST2.remove('E');
   //   console.log(BST2);
 
-//4. What does this program do?
-// adds all values of the tree
-// Linear time O(n)
+  //4. What does this program do?
+  // adds all values of the tree
+  // Linear time O(n)
+
+  //5. Height of a BST
+  console.log(treeHeight(BST));
+  console.log(treeHeight(BST2));
 }
 
 main();
+
+function treeHeight(tree,height=0){
+  if(!tree){
+    return height;
+  }
+  return `left: ${treeHeight(tree.left,height++)} right: ${treeHeight(tree.right,height++)}`;
+}
