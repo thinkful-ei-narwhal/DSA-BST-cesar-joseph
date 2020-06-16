@@ -92,6 +92,10 @@ function main() {
   //7. 3rd largest node
   console.log(thirdLargest(BST));
   console.log(thirdLargest(BST2));
+
+  //9.  Are they the same BSTs?
+  console.log(areSame([3, 5, 4, 6, 1, 0, 2],[3, 1, 5, 2, 4, 6, 0]));
+
 }
 
 main();
@@ -135,4 +139,14 @@ function thirdLargest(tree){
   tree.remove(max(tree).key);
   tree.remove(max(tree).key);
   return max(tree).key;
+}
+
+function areSame(arr1, arr2){
+  if(arr1.leght !== arr2.legth) return false;
+  if(arr1[0] !== arr2[0]) return false;
+  
+  arr1 = arr1.sort(function(a,b){return a-b;});
+  arr2 = arr2.sort(function(a,b){return a-b;});
+
+  return (JSON.stringify(arr1)===JSON.stringify(arr2))? true : false;
 }
