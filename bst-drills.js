@@ -59,7 +59,7 @@ function main() {
   BST.insert(5, 'G');
   BST.insert(7, 'H');
   BST.remove(3);
-  //   console.log(BST);
+  console.log(BST);
 
   const BST2 = new BinarySearchTree();
   BST2.insert('E', '1');
@@ -75,7 +75,7 @@ function main() {
   BST2.insert('O', '11');
   BST2.insert('N', '12');
   BST2.remove('E');
-  //   console.log(BST2);
+  console.log(BST2);
 
   //4. What does this program do?
   // adds all values of the tree
@@ -89,8 +89,9 @@ function main() {
   console.log(isItBst(BST));
   console.log(isItBst(BST2));
 
-  //8. Balanced BST
-
+  //7. 3rd largest node
+  console.log(thirdLargest(BST));
+  console.log(thirdLargest(BST2));
 }
 
 main();
@@ -123,7 +124,15 @@ function isItBst(tree){
   return true;
 }
 
-function balancedBst(tree){
-  if(!tree) return false;
-  let halfBstLength = tree;
+function max(tree){
+  if (!tree.right) {
+    return tree;
+  }
+  return max(tree.right);
+}
+
+function thirdLargest(tree){
+  tree.remove(max(tree).key);
+  tree.remove(max(tree).key);
+  return max(tree).key;
 }
