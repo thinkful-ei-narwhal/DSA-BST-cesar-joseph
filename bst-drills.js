@@ -88,6 +88,9 @@ function main() {
   //6. Is it a BST?
   console.log(isItBst(BST));
   console.log(isItBst(BST2));
+
+  //8. Balanced BST
+
 }
 
 main();
@@ -103,7 +106,15 @@ function treeHeight(tree){
 
 function isItBst(tree){
   if (!tree) return false;
-  if (tree.left.key < tree.right.key) return true;
-  return (isItBst(tree.left) + isItBst(tree.right));
+  if (!tree.left && !tree.right) return true;
+  else {
+    if (tree.left && tree.left.key > tree.key) return false;
+    if (tree.right && tree.right.key < tree.key) return false;
+    return isItBst(tree.left) || isItBst(tree.right);
+  }
 }
 
+function balancedBst(tree){
+  if(!tree) return false;
+  let halfBstLength = tree
+}
