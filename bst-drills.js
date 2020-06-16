@@ -36,8 +36,8 @@ const BinarySearchTree = require('./BinarySearchTree');
 //B.           E
 //           /    \
 //          A       S
-//         /      /   \
-//        E      Q     Y
+//                /   \
+//               Q     Y
 //              / \    /
 //             I   S  U 
 //              \    /
@@ -58,7 +58,8 @@ function main() {
   BST.insert(2, 'F');
   BST.insert(5, 'G');
   BST.insert(7, 'H');
-  // console.log(BST);
+  BST.remove(3);
+  //   console.log(BST);
 
   const BST2 = new BinarySearchTree();
   BST2.insert('E', '1');
@@ -73,7 +74,8 @@ function main() {
   BST2.insert('I', '10');
   BST2.insert('O', '11');
   BST2.insert('N', '12');
-  console.log(BST2);
+  BST2.remove('E');
+//   console.log(BST2);
 }
 
 main();
