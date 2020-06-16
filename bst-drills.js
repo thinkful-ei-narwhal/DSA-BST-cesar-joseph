@@ -1,3 +1,5 @@
+const BinarySearchTree = require('./BinarySearchTree');
+
 //1. Draw a BST
 //A:           3
 //            /  \
@@ -45,5 +47,18 @@
 
 
 //3. Create a BST class
-//
 
+function main() {
+  const BST = new BinarySearchTree();
+  BST.insert(3, 'A');
+  BST.insert(1, 'B');
+  BST.insert(4, 'C');
+  BST.insert(6, 'D');
+  BST.insert(9, 'E');
+  BST.insert(2, 'F');
+  BST.insert(5, 'G');
+  BST.insert(7, 'H');
+  console.log(BST);
+}
+
+main();
