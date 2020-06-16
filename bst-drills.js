@@ -58,7 +58,22 @@ function main() {
   BST.insert(2, 'F');
   BST.insert(5, 'G');
   BST.insert(7, 'H');
-  console.log(BST);
+  // console.log(BST);
+
+  const BST2 = new BinarySearchTree();
+  BST2.insert('E', '1');
+  BST2.insert('A', '2');
+  BST2.insert('S', '3');
+  BST2.insert('Y', '4');
+  BST2.insert('Q', '5');
+  BST2.insert('U', '6');
+  BST2.insert('E', '7');
+  BST2.insert('S', '8');
+  BST2.insert('T', '9');
+  BST2.insert('I', '10');
+  BST2.insert('O', '11');
+  BST2.insert('N', '12');
+  console.log(BST2);
 }
 
 main();
