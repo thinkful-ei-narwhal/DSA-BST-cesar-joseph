@@ -8,8 +8,8 @@ const BinarySearchTree = require('./BinarySearchTree');
 //            2       6
 //                   /  \
 //                  5    9
-//                       /
-//                      7
+//                      /
+//                     7
 
 //B.           E
 //           /   \
@@ -88,9 +88,12 @@ function main() {
 
 main();
 
-function treeHeight(tree,height=0){
+function treeHeight(tree){
   if(!tree){
-    return height;
+    return 0;
   }
-  return `left: ${treeHeight(tree.left,height++)} right: ${treeHeight(tree.right,height++)}`;
+  let left= treeHeight(tree.left)+1;
+  let right= treeHeight(tree.right)+1;
+  return (left>right)?left : right;
 }
+
