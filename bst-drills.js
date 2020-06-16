@@ -84,6 +84,9 @@ function main() {
   //5. Height of a BST
   console.log(treeHeight(BST));
   console.log(treeHeight(BST2));
+
+  //6. Is it a BST?
+  console.log(isItBst(BST));
 }
 
 main();
@@ -95,5 +98,15 @@ function treeHeight(tree){
   let left= treeHeight(tree.left)+1;
   let right= treeHeight(tree.right)+1;
   return (left>right)?left : right;
+}
+
+function isItBst(tree){
+  if(!tree){
+    return false;
+  }
+  //(tree.left&&tree.right)
+  //left < right 
+  // return 
+
 }
 
