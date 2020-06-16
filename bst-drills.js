@@ -75,7 +75,11 @@ function main() {
   BST2.insert('O', '11');
   BST2.insert('N', '12');
   BST2.remove('E');
-//   console.log(BST2);
+  //   console.log(BST2);
+
+//4. What does this program do?
+// adds all values of the tree
+// Linear time O(n)
 }
 
 main();
