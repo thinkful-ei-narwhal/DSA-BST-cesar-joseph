@@ -83,14 +83,7 @@ function main() {
 
   //5. Height of a BST
   console.log(treeHeight(BST));
-  console.log(treeHeight(BST2));
+  // console.log(treeHeight(BST2));
 }
 
 main();
-
-function treeHeight(tree,height=0){
-  if(!tree){
-    return height;
-  }
-  return `left: ${treeHeight(tree.left,height++)} right: ${treeHeight(tree.right,height++)}`;
-}
